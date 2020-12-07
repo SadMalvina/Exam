@@ -102,7 +102,7 @@ DWORD WINAPI CheckDir(LPVOID lpParam) {
                     _tcscpy(arg, name);
                     HANDLE threadHandle = CreateThread(NULL, 0, CheckDir, arg, 0, NULL);
                     if (threadHandle != INVALID_HANDLE_VALUE) {
-                        struct Titem *m = malloc(sizeof(struct Titem));
+                        struct Titem *m = malloc(sizeof(struct Titem)); //ERROR OF MALLOC
                         if (m) {
                             m->current_thread = threadHandle;
                             m->next = first;
